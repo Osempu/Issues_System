@@ -35,14 +35,12 @@
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.topLogo = new System.Windows.Forms.PictureBox();
             this.leftPanel = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.lblBrand = new System.Windows.Forms.Label();
             this.Logo = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topLogo)).BeginInit();
             this.leftPanel.SuspendLayout();
@@ -53,8 +51,6 @@
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(75)))), ((int)(((byte)(84)))));
-            this.topPanel.Controls.Add(this.button6);
-            this.topPanel.Controls.Add(this.button7);
             this.topPanel.Controls.Add(this.button5);
             this.topPanel.Controls.Add(this.button4);
             this.topPanel.Controls.Add(this.lblFormTitle);
@@ -71,7 +67,7 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(1015, 0);
+            this.button5.Location = new System.Drawing.Point(1018, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(45, 35);
             this.button5.TabIndex = 4;
@@ -123,16 +119,6 @@
             this.leftPanel.Size = new System.Drawing.Size(193, 661);
             this.leftPanel.TabIndex = 2;
             // 
-            // mainPanel
-            // 
-            this.mainPanel.Controls.Add(this.lblBrand);
-            this.mainPanel.Controls.Add(this.Logo);
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(193, 35);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(912, 661);
-            this.mainPanel.TabIndex = 3;
-            // 
             // button3
             // 
             this.button3.FlatAppearance.BorderSize = 0;
@@ -178,6 +164,16 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Controls.Add(this.lblBrand);
+            this.mainPanel.Controls.Add(this.Logo);
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(193, 35);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(912, 661);
+            this.mainPanel.TabIndex = 3;
+            // 
             // lblBrand
             // 
             this.lblBrand.AutoSize = true;
@@ -199,28 +195,6 @@
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Logo.TabIndex = 6;
             this.Logo.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(905, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(45, 35);
-            this.button6.TabIndex = 6;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(950, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(45, 35);
-            this.button7.TabIndex = 5;
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -250,8 +224,6 @@
         #endregion
 
         private System.Windows.Forms.Panel topPanel;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblFormTitle;

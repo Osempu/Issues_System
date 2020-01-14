@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.fechaApertura = new System.Windows.Forms.DateTimePicker();
-            this.lblTIme = new System.Windows.Forms.Label();
             this.lblDetails = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.txtLine = new System.Windows.Forms.ComboBox();
+            this.cbEquipment = new System.Windows.Forms.ComboBox();
+            this.cbLine = new System.Windows.Forms.ComboBox();
             this.lblEquipment = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDetails = new System.Windows.Forms.TextBox();
             this.lblLine = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -46,83 +44,75 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(646, 566);
+            this.btnSubmit.Location = new System.Drawing.Point(646, 573);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(243, 65);
             this.btnSubmit.TabIndex = 14;
             this.btnSubmit.Text = "Submit Issue";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            // 
-            // fechaApertura
-            // 
-            this.fechaApertura.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.fechaApertura.Location = new System.Drawing.Point(217, 511);
-            this.fechaApertura.Margin = new System.Windows.Forms.Padding(4);
-            this.fechaApertura.Name = "fechaApertura";
-            this.fechaApertura.Size = new System.Drawing.Size(182, 22);
-            this.fechaApertura.TabIndex = 13;
-            // 
-            // lblTIme
-            // 
-            this.lblTIme.AutoSize = true;
-            this.lblTIme.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTIme.Location = new System.Drawing.Point(54, 512);
-            this.lblTIme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTIme.Name = "lblTIme";
-            this.lblTIme.Size = new System.Drawing.Size(140, 32);
-            this.lblTIme.TabIndex = 11;
-            this.lblTIme.Text = "Issue Time :";
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblDetails
             // 
             this.lblDetails.AutoSize = true;
             this.lblDetails.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetails.Location = new System.Drawing.Point(37, 275);
+            this.lblDetails.Location = new System.Drawing.Point(37, 362);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Size = new System.Drawing.Size(159, 32);
             this.lblDetails.TabIndex = 12;
             this.lblDetails.Text = "Issue Details :";
             // 
-            // comboBox2
+            // cbEquipment
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(217, 153);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(266, 24);
-            this.comboBox2.TabIndex = 9;
+            this.cbEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEquipment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEquipment.FormattingEnabled = true;
+            this.cbEquipment.Items.AddRange(new object[] {
+            "Hot Drop",
+            "Embobinadora",
+            "Cortadoras"});
+            this.cbEquipment.Location = new System.Drawing.Point(217, 219);
+            this.cbEquipment.Margin = new System.Windows.Forms.Padding(4);
+            this.cbEquipment.Name = "cbEquipment";
+            this.cbEquipment.Size = new System.Drawing.Size(266, 36);
+            this.cbEquipment.TabIndex = 9;
             // 
-            // txtLine
+            // cbLine
             // 
-            this.txtLine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtLine.FormattingEnabled = true;
-            this.txtLine.Location = new System.Drawing.Point(217, 52);
-            this.txtLine.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLine.Name = "txtLine";
-            this.txtLine.Size = new System.Drawing.Size(266, 24);
-            this.txtLine.TabIndex = 10;
+            this.cbLine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLine.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLine.FormattingEnabled = true;
+            this.cbLine.Items.AddRange(new object[] {
+            "52",
+            "33",
+            "12"});
+            this.cbLine.Location = new System.Drawing.Point(217, 53);
+            this.cbLine.Margin = new System.Windows.Forms.Padding(4);
+            this.cbLine.Name = "cbLine";
+            this.cbLine.Size = new System.Drawing.Size(266, 36);
+            this.cbLine.TabIndex = 10;
             // 
             // lblEquipment
             // 
             this.lblEquipment.AutoSize = true;
             this.lblEquipment.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipment.Location = new System.Drawing.Point(48, 155);
+            this.lblEquipment.Location = new System.Drawing.Point(48, 220);
             this.lblEquipment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEquipment.Name = "lblEquipment";
             this.lblEquipment.Size = new System.Drawing.Size(143, 32);
             this.lblEquipment.TabIndex = 6;
             this.lblEquipment.Text = "Equipment :";
             // 
-            // textBox1
+            // txtDetails
             // 
-            this.textBox1.Location = new System.Drawing.Point(217, 274);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(530, 171);
-            this.textBox1.TabIndex = 8;
+            this.txtDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetails.Location = new System.Drawing.Point(217, 362);
+            this.txtDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDetails.Multiline = true;
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.Size = new System.Drawing.Size(530, 171);
+            this.txtDetails.TabIndex = 8;
             // 
             // lblLine
             // 
@@ -137,16 +127,13 @@
             // 
             // IssueForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.fechaApertura);
-            this.Controls.Add(this.lblTIme);
             this.Controls.Add(this.lblDetails);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.txtLine);
+            this.Controls.Add(this.cbEquipment);
+            this.Controls.Add(this.cbLine);
             this.Controls.Add(this.lblEquipment);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDetails);
             this.Controls.Add(this.lblLine);
             this.Name = "IssueForm";
             this.Size = new System.Drawing.Size(912, 661);
@@ -158,13 +145,11 @@
         #endregion
 
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.DateTimePicker fechaApertura;
-        private System.Windows.Forms.Label lblTIme;
         private System.Windows.Forms.Label lblDetails;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox txtLine;
+        private System.Windows.Forms.ComboBox cbEquipment;
+        private System.Windows.Forms.ComboBox cbLine;
         private System.Windows.Forms.Label lblEquipment;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDetails;
         private System.Windows.Forms.Label lblLine;
     }
 }
