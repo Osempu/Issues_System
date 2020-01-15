@@ -30,6 +30,7 @@ namespace Issues_System.Controls
                     {
                         adapter.Fill(dt);
                     }
+                    conn.Close();
                 }
                 return dt;
             }
@@ -49,13 +50,12 @@ namespace Issues_System.Controls
                     cmd.Parameters.AddWithValue("@Line", issue.Line);
                     cmd.Parameters.AddWithValue("@Equipment", issue.Equipment);
                     cmd.Parameters.AddWithValue("@Details", issue.Details);
-                    cmd.Parameters.AddWithValue("@IssueTime", issue.OpenAt);
+                    cmd.Parameters.AddWithValue("@OpenAt", issue.OpenAt);
 
                     succes = cmd.ExecuteNonQuery();
                 }
                 conn.Close();
             }
-
             return succes;
         }
     }

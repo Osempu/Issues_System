@@ -20,9 +20,12 @@ namespace Issues_System.Views
 
         private void OpenIssues_Load(object sender, EventArgs e)
         {
-            IssueDAL iDal = new IssueDAL();
+            
+        }
 
-            dgvOpenIssues.DataSource = iDal.Select();
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvOpenIssues.CurrentRow.Cells[0].Value);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Issues_System.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,24 +16,47 @@ namespace Issues_System
         public Form1()
         {
             InitializeComponent();
+
+            btnSelector.Hide();
+            HideViews();
         }
+
+        IssueDAL iDal = new IssueDAL();
+
 
         private void btnOpenIssue_Click(object sender, EventArgs e)
         {
-            btnSelector.Height = btnOpenIssue.Height;
-            btnSelector.Top = btnOpenIssue.Top;
+            ButtonGeneralFunction(btnOpenIssue, issueForm);
         }
 
         private void btnAttendIssue_Click(object sender, EventArgs e)
         {
-            btnSelector.Height = btnAttendIssue.Height;
-            btnSelector.Top = btnAttendIssue.Top;
+            ButtonGeneralFunction(btnAttendIssue, openIssues);
+
+            openIssues.dgvOpenIssues.DataSource = iDal.Select();
         }
 
         private void btnIssueHistory_Click(object sender, EventArgs e)
         {
-            btnSelector.Height = btnIssueHistory.Height;
-            btnSelector.Top = btnIssueHistory.Top;
+            
+        }
+
+        private void HideViews()
+        {
+            issueForm.Hide();
+            openIssues.Hide();
+        }
+
+        private void ButtonGeneralFunction(Button btn, UserControl uc)
+        {
+            issueForm.Hide();
+            openIssues.Hide();
+
+            uc.Show();
+
+            btnSelector.Height = btn.Height;
+            btnSelector.Top = btn.Top;
+            btnSelector.Show();
         }
     }
 }
