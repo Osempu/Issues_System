@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Issues_System.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -34,21 +35,21 @@ namespace Issues_System.Controls
             }
         }
 
-        public int Insert(string Line, string Equipment, string Details, DateTime time)
+        public int Insert(Issue issue)
         {
             int succes = 0;
 
             using (SqlConnection conn = new SqlConnection(connstring))
             {
                 conn.Open();
-                string sqlCmd = "Insert into Issues(Line, Equipment, Details, IssueTime ) values (@Line, @Equipment, @Details, @IssueTime)";
+                string sqlCmd = "Insert into Issues(Line, Equipment, Details, OpenAt ) values (@Line, @Equipment, @Details, @OpenAt)";
 
                 using (SqlCommand cmd = new SqlCommand(sqlCmd, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Line", Line);
-                    cmd.Parameters.AddWithValue("@Equipment", Equipment);
-                    cmd.Parameters.AddWithValue("@Details", Details);
-                    cmd.Parameters.AddWithValue("@IssueTime", time);
+                    cmd.Parameters.AddWithValue("@Line", issue.Line);
+                    cmd.Parameters.AddWithValue("@Equipment", issue.Equipment);
+                    cmd.Parameters.AddWithValue("@Details", issue.Details);
+                    cmd.Parameters.AddWithValue("@IssueTime", issue.OpenAt);
 
                     succes = cmd.ExecuteNonQuery();
                 }

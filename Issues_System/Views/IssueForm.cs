@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Issues_System.Controls;
+using Issues_System.Models;
 
 namespace Issues_System.Views
 {
@@ -21,10 +22,16 @@ namespace Issues_System.Views
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             IssueDAL iDal = new IssueDAL();
+            //Filling issue with form data.
+            Issue issue = new Issue()
+            {
+                Line = cbLine.Text,
+                Equipment = cbEquipment.Text,
+                Details = txtDetails.Text,
+                OpenAt = DateTime.Now.TimeOfDay,
+            };
 
-            DateTime issueTime = DateTime.Now;
-
-            iDal.Insert(cbLine.Text, cbEquipment.Text, txtDetails.Text, issueTime);
+            iDal.Insert(issue);
         }
     }
 }

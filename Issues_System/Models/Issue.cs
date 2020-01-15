@@ -8,10 +8,12 @@ namespace Issues_System.Models
 {
     class Issue
     {
-        public int IssueId { get; set; }
+        public int Id { get; set; }
         public string Line { get; set; }
         public string Equipment { get; set; }
-        public string IssueDetails { get; set; }
-        public TimeSpan IssueTime { get; set; }
+        public string Details { get; set; }
+        public TimeSpan OpenAt { get; set; }
+        public TimeSpan TimeOpen { get; set; }
+        public TimeSpan ClosedAt { get; set; }
     }
 }

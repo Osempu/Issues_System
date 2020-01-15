@@ -35,12 +35,13 @@
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.topLogo = new System.Windows.Forms.PictureBox();
             this.leftPanel = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnIssueHistory = new System.Windows.Forms.Button();
+            this.btnAttendIssue = new System.Windows.Forms.Button();
+            this.btnOpenIssue = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.lblBrand = new System.Windows.Forms.Label();
             this.Logo = new System.Windows.Forms.PictureBox();
+            this.btnSelector = new System.Windows.Forms.Panel();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topLogo)).BeginInit();
             this.leftPanel.SuspendLayout();
@@ -109,69 +110,73 @@
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(152)))), ((int)(((byte)(142)))));
-            this.leftPanel.Controls.Add(this.button3);
-            this.leftPanel.Controls.Add(this.button2);
-            this.leftPanel.Controls.Add(this.button1);
+            this.leftPanel.Controls.Add(this.btnSelector);
+            this.leftPanel.Controls.Add(this.btnIssueHistory);
+            this.leftPanel.Controls.Add(this.btnAttendIssue);
+            this.leftPanel.Controls.Add(this.btnOpenIssue);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 35);
             this.leftPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(193, 661);
+            this.leftPanel.Size = new System.Drawing.Size(203, 661);
             this.leftPanel.TabIndex = 2;
             // 
-            // button3
+            // btnIssueHistory
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 172);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 52);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "  Issue History";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnIssueHistory.FlatAppearance.BorderSize = 0;
+            this.btnIssueHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIssueHistory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssueHistory.ForeColor = System.Drawing.Color.White;
+            this.btnIssueHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnIssueHistory.Image")));
+            this.btnIssueHistory.Location = new System.Drawing.Point(12, 172);
+            this.btnIssueHistory.Name = "btnIssueHistory";
+            this.btnIssueHistory.Size = new System.Drawing.Size(191, 52);
+            this.btnIssueHistory.TabIndex = 11;
+            this.btnIssueHistory.Text = "  Issue History";
+            this.btnIssueHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnIssueHistory.UseVisualStyleBackColor = true;
+            this.btnIssueHistory.Click += new System.EventHandler(this.btnIssueHistory_Click);
             // 
-            // button2
+            // btnAttendIssue
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(0, 96);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 52);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "  Attend Issue";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAttendIssue.FlatAppearance.BorderSize = 0;
+            this.btnAttendIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAttendIssue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttendIssue.ForeColor = System.Drawing.Color.White;
+            this.btnAttendIssue.Image = ((System.Drawing.Image)(resources.GetObject("btnAttendIssue.Image")));
+            this.btnAttendIssue.Location = new System.Drawing.Point(12, 96);
+            this.btnAttendIssue.Name = "btnAttendIssue";
+            this.btnAttendIssue.Size = new System.Drawing.Size(191, 52);
+            this.btnAttendIssue.TabIndex = 10;
+            this.btnAttendIssue.Text = "  Attend Issue";
+            this.btnAttendIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAttendIssue.UseVisualStyleBackColor = true;
+            this.btnAttendIssue.Click += new System.EventHandler(this.btnAttendIssue_Click);
             // 
-            // button1
+            // btnOpenIssue
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 52);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "  Open Issue";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOpenIssue.FlatAppearance.BorderSize = 0;
+            this.btnOpenIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenIssue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenIssue.ForeColor = System.Drawing.Color.White;
+            this.btnOpenIssue.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenIssue.Image")));
+            this.btnOpenIssue.Location = new System.Drawing.Point(12, 20);
+            this.btnOpenIssue.Name = "btnOpenIssue";
+            this.btnOpenIssue.Size = new System.Drawing.Size(191, 52);
+            this.btnOpenIssue.TabIndex = 9;
+            this.btnOpenIssue.Text = "  Open Issue";
+            this.btnOpenIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOpenIssue.UseVisualStyleBackColor = true;
+            this.btnOpenIssue.Click += new System.EventHandler(this.btnOpenIssue_Click);
             // 
             // mainPanel
             // 
             this.mainPanel.Controls.Add(this.lblBrand);
             this.mainPanel.Controls.Add(this.Logo);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(193, 35);
+            this.mainPanel.Location = new System.Drawing.Point(203, 35);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(912, 661);
+            this.mainPanel.Size = new System.Drawing.Size(902, 661);
             this.mainPanel.TabIndex = 3;
             // 
             // lblBrand
@@ -195,6 +200,14 @@
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Logo.TabIndex = 6;
             this.Logo.TabStop = false;
+            // 
+            // btnSelector
+            // 
+            this.btnSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(75)))), ((int)(((byte)(84)))));
+            this.btnSelector.Location = new System.Drawing.Point(0, 20);
+            this.btnSelector.Name = "btnSelector";
+            this.btnSelector.Size = new System.Drawing.Size(10, 52);
+            this.btnSelector.TabIndex = 8;
             // 
             // Form1
             // 
@@ -229,12 +242,13 @@
         private System.Windows.Forms.Label lblFormTitle;
         private System.Windows.Forms.PictureBox topLogo;
         private System.Windows.Forms.Panel leftPanel;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIssueHistory;
+        private System.Windows.Forms.Button btnAttendIssue;
+        private System.Windows.Forms.Button btnOpenIssue;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Panel btnSelector;
     }
 }
 

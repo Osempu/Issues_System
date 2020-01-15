@@ -16,5 +16,23 @@ namespace Issues_System
         {
             InitializeComponent();
         }
+
+        private void btnOpenIssue_Click(object sender, EventArgs e)
+        {
+            btnSelector.Height = btnOpenIssue.Height;
+            btnSelector.Top = btnOpenIssue.Top;
+        }
+
+        private void btnAttendIssue_Click(object sender, EventArgs e)
+        {
+            btnSelector.Height = btnAttendIssue.Height;
+            btnSelector.Top = btnAttendIssue.Top;
+        }
+
+        private void btnIssueHistory_Click(object sender, EventArgs e)
+        {
+            btnSelector.Height = btnIssueHistory.Height;
+            btnSelector.Top = btnIssueHistory.Top;
+        }
     }
 }
