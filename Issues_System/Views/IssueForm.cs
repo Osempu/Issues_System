@@ -31,7 +31,23 @@ namespace Issues_System.Views
                 OpenAt = DateTime.Now.TimeOfDay,
             };
 
-            iDal.Insert(issue);
+            if (iDal.Insert(issue) > 0)
+            {
+                ClearFields();
+                MessageBox.Show("Issue Submited.","Issue Submited");
+            }
+            else
+            {
+                MessageBox.Show("The issue was not submited due to an error", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClearFields()
+        {
+            cbLine.SelectedIndex = -1;
+            cbEquipment.SelectedIndex = -1;
+            txtDetails.Text = "";
         }
     }
 }

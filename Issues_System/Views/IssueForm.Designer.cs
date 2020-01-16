@@ -128,6 +128,7 @@
             // IssueForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblDetails);
             this.Controls.Add(this.cbEquipment);

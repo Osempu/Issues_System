@@ -1,6 +1,6 @@
 ﻿namespace Issues_System.Views
 {
-    partial class IssueHistory
+    partial class IssuesHistory
     {
         /// <summary> 
         /// Required designer variable.
@@ -60,6 +60,7 @@
             this.btnDetails.TabIndex = 12;
             this.btnDetails.Text = "View";
             this.btnDetails.UseVisualStyleBackColor = false;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // dgvIssuesHistory
             // 
@@ -120,16 +121,15 @@
             this.dgvIssuesHistory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvIssuesHistory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // IssueHistory
+            // IssuesHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.dgvIssuesHistory);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnDetails);
-            this.Name = "IssueHistory";
+            this.Name = "IssuesHistory";
             this.Size = new System.Drawing.Size(912, 661);
-            this.Load += new System.EventHandler(this.IssueHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssuesHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,6 +140,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnDetails;
-        private Guna.UI.WinForms.GunaDataGridView dgvIssuesHistory;
+        public Guna.UI.WinForms.GunaDataGridView dgvIssuesHistory;
     }
 }

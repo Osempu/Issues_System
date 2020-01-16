@@ -1,4 +1,5 @@
 ﻿using Issues_System.Controls;
+using Issues_System.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,24 +34,27 @@ namespace Issues_System
         {
             ButtonGeneralFunction(btnAttendIssue, openIssues);
 
-            openIssues.dgvOpenIssues.DataSource = iDal.Select();
+            openIssues.dgvOpenIssues.DataSource = iDal.OpenIssues();
         }
 
         private void btnIssueHistory_Click(object sender, EventArgs e)
         {
-            
+            ButtonGeneralFunction(btnIssueHistory, issuesHistory);
+            issuesHistory.dgvIssuesHistory.DataSource = iDal.ClosedIssues();
         }
 
         private void HideViews()
         {
             issueForm.Hide();
             openIssues.Hide();
+            issuesHistory.Hide();
         }
 
         private void ButtonGeneralFunction(Button btn, UserControl uc)
         {
             issueForm.Hide();
             openIssues.Hide();
+            issuesHistory.Hide();
 
             uc.Show();
 

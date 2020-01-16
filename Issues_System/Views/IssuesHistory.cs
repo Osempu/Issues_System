@@ -12,27 +12,25 @@ using Issues_System.Models;
 
 namespace Issues_System.Views
 {
-    public partial class OpenIssues : UserControl
+    public partial class IssuesHistory : UserControl
     {
-        public OpenIssues()
+        public IssuesHistory()
         {
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnDetails_Click(object sender, EventArgs e)
         {
             IssueDAL iDal = new IssueDAL();
 
-            if (dgvOpenIssues.CurrentRow != null)
+            if (dgvIssuesHistory.CurrentRow != null)
             {
-                int id = Convert.ToInt32(dgvOpenIssues.CurrentRow.Cells[0].Value);
+                int id = Convert.ToInt32(dgvIssuesHistory.CurrentRow.Cells[0].Value);
 
                 Issue issue = iDal.FIndById(id);
 
-                CloseIssueForm closeForm = new CloseIssueForm(issue);
+                IssuesHistoryForm closeForm = new IssuesHistoryForm(issue);
                 closeForm.ShowDialog();
-
-                dgvOpenIssues.DataSource = iDal.OpenIssues();
             }
             else
             {

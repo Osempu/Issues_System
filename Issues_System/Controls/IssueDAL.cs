@@ -14,7 +14,7 @@ namespace Issues_System.Controls
     {
         private static string connstring = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
-        public DataTable Select()
+        public DataTable OpenIssues()
         {
             using (SqlConnection conn = new SqlConnection(connstring))
             {
@@ -22,10 +22,36 @@ namespace Issues_System.Controls
 
                 conn.Open();
 
-                string sqlCmd = "select * from Issues";
+                string sqlCmd = "select * from Issues where IsClosed = @IsClosed";
 
                 using (SqlCommand cmd = new SqlCommand(sqlCmd, conn))
                 {
+                    cmd.Parameters.AddWithValue("@IsClosed", false);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                    conn.Close();
+                }
+                return dt;
+            }
+        }
+
+        public DataTable ClosedIssues()
+        {
+            using (SqlConnection conn = new SqlConnection(connstring))
+            {
+                DataTable dt = new DataTable(); ;
+
+                conn.Open();
+
+                string sqlCmd = "select * from Issues where IsClosed = @IsClosed";
+
+                using (SqlCommand cmd = new SqlCommand(sqlCmd, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IsClosed", true);
+
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         adapter.Fill(dt);
@@ -43,7 +69,7 @@ namespace Issues_System.Controls
             using (SqlConnection conn = new SqlConnection(connstring))
             {
                 conn.Open();
-                string sqlCmd = "Insert into Issues(Line, Equipment, Details, OpenAt ) values (@Line, @Equipment, @Details, @OpenAt)";
+                string sqlCmd = "Insert into Issues(Line, Equipment, Details, OpenAt, IsClosed) values (@Line, @Equipment, @Details, @OpenAt, @IsClosed)";
 
                 using (SqlCommand cmd = new SqlCommand(sqlCmd, conn))
                 {
@@ -51,6 +77,7 @@ namespace Issues_System.Controls
                     cmd.Parameters.AddWithValue("@Equipment", issue.Equipment);
                     cmd.Parameters.AddWithValue("@Details", issue.Details);
                     cmd.Parameters.AddWithValue("@OpenAt", issue.OpenAt);
+                    cmd.Parameters.AddWithValue("@IsClosed", false);
 
                     succes = cmd.ExecuteNonQuery();
                 }
@@ -58,5 +85,61 @@ namespace Issues_System.Controls
             }
             return succes;
         }
+
+        public Issue FIndById(int id)
+        {
+            Issue returnedIssue = new Issue();
+
+            using (SqlConnection conn = new SqlConnection(connstring))
+            {
+                string sqlString = "Select * from Issues where id = @id";
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(sqlString, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
+                        {
+                            returnedIssue.Id = Convert.ToInt32(reader["Id"]);
+                            returnedIssue.Line = reader["Line"].ToString();
+                            returnedIssue.Equipment = reader["Equipment"].ToString();
+                            returnedIssue.Details = reader["Details"].ToString();
+                            returnedIssue.Solution = reader["Solution"].ToString();
+                            returnedIssue.OpenAt = TimeSpan.Parse(reader["OpenAt"].ToString());
+                        }
+                }
+                conn.Close();
+            }
+            return returnedIssue;
+        }
+
+        public int Close(int id, string solution, TimeSpan timeOpen, TimeSpan closedAt)
+        {
+            int succes = 0;
+
+            using (SqlConnection conn = new SqlConnection(connstring))
+            {
+                string sqlCmd = "update issues set Solution = @Solution, TimeOpen = @TimeOpen, " +
+                    "ClosedAt = @ClosedAt, IsClosed = @IsClosed where Id = @Id";
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(sqlCmd, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Solution", solution);
+                    cmd.Parameters.AddWithValue("@TimeOpen", timeOpen);
+                    cmd.Parameters.AddWithValue("@ClosedAt", closedAt);
+                    cmd.Parameters.AddWithValue("@IsClosed", true);
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    succes = cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+            return succes;
+        }
+
     }
 }
+
