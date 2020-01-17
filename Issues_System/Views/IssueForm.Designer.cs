@@ -47,7 +47,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(646, 573);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(243, 65);
-            this.btnSubmit.TabIndex = 14;
+            this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Submit Issue";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -55,73 +55,73 @@
             // lblDetails
             // 
             this.lblDetails.AutoSize = true;
-            this.lblDetails.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetails.Location = new System.Drawing.Point(37, 362);
+            this.lblDetails.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(66, 362);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(159, 32);
+            this.lblDetails.Size = new System.Drawing.Size(185, 38);
             this.lblDetails.TabIndex = 12;
             this.lblDetails.Text = "Issue Details :";
             // 
             // cbEquipment
             // 
             this.cbEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEquipment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEquipment.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEquipment.FormattingEnabled = true;
             this.cbEquipment.Items.AddRange(new object[] {
             "Hot Drop",
             "Embobinadora",
             "Cortadoras"});
-            this.cbEquipment.Location = new System.Drawing.Point(217, 219);
+            this.cbEquipment.Location = new System.Drawing.Point(239, 219);
             this.cbEquipment.Margin = new System.Windows.Forms.Padding(4);
             this.cbEquipment.Name = "cbEquipment";
-            this.cbEquipment.Size = new System.Drawing.Size(266, 36);
-            this.cbEquipment.TabIndex = 9;
+            this.cbEquipment.Size = new System.Drawing.Size(266, 45);
+            this.cbEquipment.TabIndex = 1;
             // 
             // cbLine
             // 
             this.cbLine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLine.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLine.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLine.FormattingEnabled = true;
             this.cbLine.Items.AddRange(new object[] {
             "52",
             "33",
             "12"});
-            this.cbLine.Location = new System.Drawing.Point(217, 53);
+            this.cbLine.Location = new System.Drawing.Point(239, 53);
             this.cbLine.Margin = new System.Windows.Forms.Padding(4);
             this.cbLine.Name = "cbLine";
-            this.cbLine.Size = new System.Drawing.Size(266, 36);
-            this.cbLine.TabIndex = 10;
+            this.cbLine.Size = new System.Drawing.Size(266, 45);
+            this.cbLine.TabIndex = 0;
             // 
             // lblEquipment
             // 
             this.lblEquipment.AutoSize = true;
-            this.lblEquipment.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipment.Location = new System.Drawing.Point(48, 220);
+            this.lblEquipment.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquipment.Location = new System.Drawing.Point(79, 222);
             this.lblEquipment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEquipment.Name = "lblEquipment";
-            this.lblEquipment.Size = new System.Drawing.Size(143, 32);
+            this.lblEquipment.Size = new System.Drawing.Size(164, 38);
             this.lblEquipment.TabIndex = 6;
             this.lblEquipment.Text = "Equipment :";
             // 
             // txtDetails
             // 
-            this.txtDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetails.Location = new System.Drawing.Point(217, 362);
+            this.txtDetails.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetails.Location = new System.Drawing.Point(239, 362);
             this.txtDetails.Margin = new System.Windows.Forms.Padding(4);
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.Size = new System.Drawing.Size(530, 171);
-            this.txtDetails.TabIndex = 8;
+            this.txtDetails.TabIndex = 2;
             // 
             // lblLine
             // 
             this.lblLine.AutoSize = true;
-            this.lblLine.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLine.Location = new System.Drawing.Point(108, 54);
+            this.lblLine.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLine.Location = new System.Drawing.Point(140, 56);
             this.lblLine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(71, 32);
+            this.lblLine.Size = new System.Drawing.Size(82, 38);
             this.lblLine.TabIndex = 7;
             this.lblLine.Text = "Line :";
             // 

@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Issues_System
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -61,6 +61,12 @@ namespace Issues_System
             btnSelector.Height = btn.Height;
             btnSelector.Top = btn.Top;
             btnSelector.Show();
+            btnSelector.BringToFront();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

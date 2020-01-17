@@ -1,6 +1,6 @@
 ﻿namespace Issues_System
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.topPanel = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.topLogo = new System.Windows.Forms.PictureBox();
             this.leftPanel = new System.Windows.Forms.Panel();
@@ -40,9 +40,9 @@
             this.btnAttendIssue = new System.Windows.Forms.Button();
             this.btnOpenIssue = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.issueForm = new Issues_System.Views.IssueForm();
             this.issuesHistory = new Issues_System.Views.IssuesHistory();
             this.openIssues = new Issues_System.Views.OpenIssues();
-            this.issueForm = new Issues_System.Views.IssueForm();
             this.lblBrand = new System.Windows.Forms.Label();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.topPanel.SuspendLayout();
@@ -55,8 +55,8 @@
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(75)))), ((int)(((byte)(84)))));
-            this.topPanel.Controls.Add(this.button5);
-            this.topPanel.Controls.Add(this.button4);
+            this.topPanel.Controls.Add(this.btnMinimize);
+            this.topPanel.Controls.Add(this.btnClose);
             this.topPanel.Controls.Add(this.lblFormTitle);
             this.topPanel.Controls.Add(this.topLogo);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -66,27 +66,28 @@
             this.topPanel.Size = new System.Drawing.Size(1105, 35);
             this.topPanel.TabIndex = 1;
             // 
-            // button5
+            // btnMinimize
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(1018, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(45, 35);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(1018, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(45, 35);
+            this.btnMinimize.TabIndex = 4;
+            this.btnMinimize.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnClose
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(1060, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(45, 35);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1060, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(45, 35);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblFormTitle
             // 
@@ -121,13 +122,13 @@
             this.leftPanel.Location = new System.Drawing.Point(0, 35);
             this.leftPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(203, 661);
+            this.leftPanel.Size = new System.Drawing.Size(193, 661);
             this.leftPanel.TabIndex = 2;
             // 
             // btnSelector
             // 
             this.btnSelector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(75)))), ((int)(((byte)(84)))));
-            this.btnSelector.Location = new System.Drawing.Point(-3, 2);
+            this.btnSelector.Location = new System.Drawing.Point(0, -3);
             this.btnSelector.Name = "btnSelector";
             this.btnSelector.Size = new System.Drawing.Size(10, 52);
             this.btnSelector.TabIndex = 8;
@@ -139,9 +140,9 @@
             this.btnIssueHistory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssueHistory.ForeColor = System.Drawing.Color.White;
             this.btnIssueHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnIssueHistory.Image")));
-            this.btnIssueHistory.Location = new System.Drawing.Point(-3, 154);
+            this.btnIssueHistory.Location = new System.Drawing.Point(0, 114);
             this.btnIssueHistory.Name = "btnIssueHistory";
-            this.btnIssueHistory.Size = new System.Drawing.Size(203, 52);
+            this.btnIssueHistory.Size = new System.Drawing.Size(193, 52);
             this.btnIssueHistory.TabIndex = 11;
             this.btnIssueHistory.Text = "  Issue History";
             this.btnIssueHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -155,9 +156,9 @@
             this.btnAttendIssue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAttendIssue.ForeColor = System.Drawing.Color.White;
             this.btnAttendIssue.Image = ((System.Drawing.Image)(resources.GetObject("btnAttendIssue.Image")));
-            this.btnAttendIssue.Location = new System.Drawing.Point(-3, 78);
+            this.btnAttendIssue.Location = new System.Drawing.Point(0, 56);
             this.btnAttendIssue.Name = "btnAttendIssue";
-            this.btnAttendIssue.Size = new System.Drawing.Size(203, 52);
+            this.btnAttendIssue.Size = new System.Drawing.Size(193, 52);
             this.btnAttendIssue.TabIndex = 10;
             this.btnAttendIssue.Text = "  Attend Issue";
             this.btnAttendIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -171,9 +172,9 @@
             this.btnOpenIssue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpenIssue.ForeColor = System.Drawing.Color.White;
             this.btnOpenIssue.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenIssue.Image")));
-            this.btnOpenIssue.Location = new System.Drawing.Point(-3, 2);
+            this.btnOpenIssue.Location = new System.Drawing.Point(0, -2);
             this.btnOpenIssue.Name = "btnOpenIssue";
-            this.btnOpenIssue.Size = new System.Drawing.Size(203, 52);
+            this.btnOpenIssue.Size = new System.Drawing.Size(193, 52);
             this.btnOpenIssue.TabIndex = 9;
             this.btnOpenIssue.Text = "  Open Issue";
             this.btnOpenIssue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -182,41 +183,45 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.issueForm);
             this.mainPanel.Controls.Add(this.issuesHistory);
             this.mainPanel.Controls.Add(this.openIssues);
-            this.mainPanel.Controls.Add(this.issueForm);
             this.mainPanel.Controls.Add(this.lblBrand);
             this.mainPanel.Controls.Add(this.Logo);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(203, 35);
+            this.mainPanel.Location = new System.Drawing.Point(193, 35);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(902, 661);
+            this.mainPanel.Size = new System.Drawing.Size(912, 661);
             this.mainPanel.TabIndex = 3;
+            // 
+            // issueForm
+            // 
+            this.issueForm.BackColor = System.Drawing.Color.White;
+            this.issueForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.issueForm.Location = new System.Drawing.Point(0, 0);
+            this.issueForm.Name = "issueForm";
+            this.issueForm.Size = new System.Drawing.Size(912, 661);
+            this.issueForm.TabIndex = 11;
             // 
             // issuesHistory
             // 
+            this.issuesHistory.BackColor = System.Drawing.Color.White;
             this.issuesHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.issuesHistory.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.issuesHistory.Location = new System.Drawing.Point(0, 0);
             this.issuesHistory.Name = "issuesHistory";
-            this.issuesHistory.Size = new System.Drawing.Size(902, 661);
+            this.issuesHistory.Size = new System.Drawing.Size(912, 661);
             this.issuesHistory.TabIndex = 10;
             // 
             // openIssues
             // 
+            this.openIssues.BackColor = System.Drawing.Color.White;
             this.openIssues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.openIssues.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openIssues.Location = new System.Drawing.Point(0, 0);
             this.openIssues.Name = "openIssues";
-            this.openIssues.Size = new System.Drawing.Size(902, 661);
+            this.openIssues.Size = new System.Drawing.Size(912, 661);
             this.openIssues.TabIndex = 9;
-            // 
-            // issueForm
-            // 
-            this.issueForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.issueForm.Location = new System.Drawing.Point(0, 0);
-            this.issueForm.Name = "issueForm";
-            this.issueForm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.issueForm.Size = new System.Drawing.Size(902, 661);
-            this.issueForm.TabIndex = 8;
             // 
             // lblBrand
             // 
@@ -240,10 +245,9 @@
             this.Logo.TabIndex = 6;
             this.Logo.TabStop = false;
             // 
-            // Form1
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1105, 696);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.leftPanel);
@@ -251,7 +255,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.topPanel.ResumeLayout(false);
@@ -268,8 +272,8 @@
         #endregion
 
         private System.Windows.Forms.Panel topPanel;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblFormTitle;
         private System.Windows.Forms.PictureBox topLogo;
         private System.Windows.Forms.Panel leftPanel;
@@ -280,9 +284,9 @@
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Panel btnSelector;
-        private Views.IssueForm issueForm;
         public Views.OpenIssues openIssues;
         public Views.IssuesHistory issuesHistory;
+        private Views.IssueForm issueForm;
     }
 }
 

@@ -12,7 +12,6 @@ namespace Issues_System.Models
         public string Line { get; set; }
         public string Equipment { get; set; }
         public string Details { get; set; }
-
         public string Solution { get; set; }
         public TimeSpan OpenAt { get; set; }
         public TimeSpan TimeOpen { get; set; }

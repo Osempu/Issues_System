@@ -23,21 +23,29 @@ namespace Issues_System.Views
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            IssueDAL iDal = new IssueDAL();
-            TimeSpan timeOpen = DateTime.Now.TimeOfDay - TimeSpan.Parse(txtTime.Text);
-            TimeSpan closedAt = DateTime.Now.TimeOfDay;
-
-            int error = iDal.Close(Convert.ToInt32(txtId.Text), txtSolution.Text, timeOpen, closedAt);
-
-            if (error > 0)
+            if (txtSolution.Text == "")
             {
-                MessageBox.Show("Issue closed succesfully.","Issue Closed", MessageBoxButtons.OK);
-                this.Close();
+                MessageBox.Show("Please fill all the fields.", "Missing Fields",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Issue was not closed due to an error.","Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                IssueDAL iDal = new IssueDAL();
+                TimeSpan timeOpen = DateTime.Now.TimeOfDay - TimeSpan.Parse(txtTime.Text);
+                TimeSpan closedAt = DateTime.Now.TimeOfDay;
+
+                int error = iDal.Close(Convert.ToInt32(txtId.Text), txtSolution.Text, timeOpen, closedAt);
+
+                if (error > 0)
+                {
+                    MessageBox.Show("Issue closed succesfully.", "Issue Closed", MessageBoxButtons.OK);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Issue was not closed due to an error.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

@@ -46,7 +46,7 @@
             // lblIssueID
             // 
             this.lblIssueID.AutoSize = true;
-            this.lblIssueID.Location = new System.Drawing.Point(41, 29);
+            this.lblIssueID.Location = new System.Drawing.Point(32, 29);
             this.lblIssueID.Name = "lblIssueID";
             this.lblIssueID.Size = new System.Drawing.Size(87, 28);
             this.lblIssueID.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(150, 26);
+            this.txtId.Location = new System.Drawing.Point(130, 26);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(109, 34);
@@ -66,8 +66,9 @@
             this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(442, 473);
+            this.btnSubmit.Location = new System.Drawing.Point(422, 460);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(168, 58);
             this.btnSubmit.TabIndex = 1;
@@ -77,7 +78,7 @@
             // 
             // txtLine
             // 
-            this.txtLine.Location = new System.Drawing.Point(150, 82);
+            this.txtLine.Location = new System.Drawing.Point(130, 82);
             this.txtLine.Name = "txtLine";
             this.txtLine.ReadOnly = true;
             this.txtLine.Size = new System.Drawing.Size(158, 34);
@@ -87,7 +88,7 @@
             // lblLine
             // 
             this.lblLine.AutoSize = true;
-            this.lblLine.Location = new System.Drawing.Point(72, 85);
+            this.lblLine.Location = new System.Drawing.Point(63, 85);
             this.lblLine.Name = "lblLine";
             this.lblLine.Size = new System.Drawing.Size(56, 28);
             this.lblLine.TabIndex = 3;
@@ -95,7 +96,7 @@
             // 
             // txtEquipment
             // 
-            this.txtEquipment.Location = new System.Drawing.Point(150, 137);
+            this.txtEquipment.Location = new System.Drawing.Point(130, 137);
             this.txtEquipment.Name = "txtEquipment";
             this.txtEquipment.ReadOnly = true;
             this.txtEquipment.Size = new System.Drawing.Size(158, 34);
@@ -105,7 +106,7 @@
             // lblEquipment
             // 
             this.lblEquipment.AutoSize = true;
-            this.lblEquipment.Location = new System.Drawing.Point(12, 140);
+            this.lblEquipment.Location = new System.Drawing.Point(3, 140);
             this.lblEquipment.Name = "lblEquipment";
             this.lblEquipment.Size = new System.Drawing.Size(116, 28);
             this.lblEquipment.TabIndex = 5;
@@ -113,7 +114,7 @@
             // 
             // txtDetails
             // 
-            this.txtDetails.Location = new System.Drawing.Point(150, 194);
+            this.txtDetails.Location = new System.Drawing.Point(130, 194);
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.ReadOnly = true;
@@ -124,7 +125,7 @@
             // lblDetails
             // 
             this.lblDetails.AutoSize = true;
-            this.lblDetails.Location = new System.Drawing.Point(48, 194);
+            this.lblDetails.Location = new System.Drawing.Point(39, 194);
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Size = new System.Drawing.Size(80, 28);
             this.lblDetails.TabIndex = 7;
@@ -132,7 +133,7 @@
             // 
             // txtSolution
             // 
-            this.txtSolution.Location = new System.Drawing.Point(150, 340);
+            this.txtSolution.Location = new System.Drawing.Point(130, 340);
             this.txtSolution.Multiline = true;
             this.txtSolution.Name = "txtSolution";
             this.txtSolution.Size = new System.Drawing.Size(460, 114);
@@ -141,7 +142,7 @@
             // lblSolution
             // 
             this.lblSolution.AutoSize = true;
-            this.lblSolution.Location = new System.Drawing.Point(33, 340);
+            this.lblSolution.Location = new System.Drawing.Point(24, 340);
             this.lblSolution.Name = "lblSolution";
             this.lblSolution.Size = new System.Drawing.Size(95, 28);
             this.lblSolution.TabIndex = 9;
@@ -150,7 +151,7 @@
             // llbTime
             // 
             this.llbTime.AutoSize = true;
-            this.llbTime.Location = new System.Drawing.Point(352, 29);
+            this.llbTime.Location = new System.Drawing.Point(372, 29);
             this.llbTime.Name = "llbTime";
             this.llbTime.Size = new System.Drawing.Size(91, 28);
             this.llbTime.TabIndex = 0;
@@ -158,7 +159,7 @@
             // 
             // txtTime
             // 
-            this.txtTime.Location = new System.Drawing.Point(456, 26);
+            this.txtTime.Location = new System.Drawing.Point(476, 26);
             this.txtTime.Name = "txtTime";
             this.txtTime.ReadOnly = true;
             this.txtTime.Size = new System.Drawing.Size(114, 34);
@@ -169,7 +170,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(622, 543);
+            this.ClientSize = new System.Drawing.Size(601, 532);
             this.Controls.Add(this.txtSolution);
             this.Controls.Add(this.lblSolution);
             this.Controls.Add(this.txtDetails);
@@ -184,6 +185,7 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblIssueID);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "CloseIssueForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Issue";

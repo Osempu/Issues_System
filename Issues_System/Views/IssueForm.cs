@@ -21,25 +21,33 @@ namespace Issues_System.Views
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            IssueDAL iDal = new IssueDAL();
-            //Filling issue with form data.
-            Issue issue = new Issue()
+            if (cbLine.Text == "" || cbEquipment.Text == "" || txtDetails.Text == "")
             {
-                Line = cbLine.Text,
-                Equipment = cbEquipment.Text,
-                Details = txtDetails.Text,
-                OpenAt = DateTime.Now.TimeOfDay,
-            };
-
-            if (iDal.Insert(issue) > 0)
-            {
-                ClearFields();
-                MessageBox.Show("Issue Submited.","Issue Submited");
+                MessageBox.Show("Please fill all the fields.", "Missing Fields",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("The issue was not submited due to an error", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                IssueDAL iDal = new IssueDAL();
+                //Filling issue with form data.
+                Issue issue = new Issue()
+                {
+                    Line = cbLine.Text,
+                    Equipment = cbEquipment.Text,
+                    Details = txtDetails.Text,
+                    OpenAt = DateTime.Now.TimeOfDay,
+                };
+
+                if (iDal.Insert(issue) > 0)
+                {
+                    ClearFields();
+                    MessageBox.Show("Issue Submited.", "Issue Submited", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("The issue was not submited due to an error", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
