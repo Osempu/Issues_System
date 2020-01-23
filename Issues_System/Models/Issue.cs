@@ -9,6 +9,8 @@ namespace Issues_System.Models
     public class Issue
     {
         public int Id { get; set; }
+        public int OpenBy { get; set; }
+        public int AssignedTo { get; set; }
         public string Line { get; set; }
         public string Equipment { get; set; }
         public string Details { get; set; }

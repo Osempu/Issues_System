@@ -35,6 +35,8 @@
             this.lblEquipment = new System.Windows.Forms.Label();
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.lblLine = new System.Windows.Forms.Label();
+            this.lblAssignedTo = new System.Windows.Forms.Label();
+            this.cbAssignedTo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnSubmit
@@ -72,7 +74,7 @@
             "Hot Drop",
             "Embobinadora",
             "Cortadoras"});
-            this.cbEquipment.Location = new System.Drawing.Point(239, 219);
+            this.cbEquipment.Location = new System.Drawing.Point(239, 149);
             this.cbEquipment.Margin = new System.Windows.Forms.Padding(4);
             this.cbEquipment.Name = "cbEquipment";
             this.cbEquipment.Size = new System.Drawing.Size(266, 45);
@@ -97,7 +99,7 @@
             // 
             this.lblEquipment.AutoSize = true;
             this.lblEquipment.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipment.Location = new System.Drawing.Point(79, 222);
+            this.lblEquipment.Location = new System.Drawing.Point(79, 152);
             this.lblEquipment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEquipment.Name = "lblEquipment";
             this.lblEquipment.Size = new System.Drawing.Size(164, 38);
@@ -125,13 +127,41 @@
             this.lblLine.TabIndex = 7;
             this.lblLine.Text = "Line :";
             // 
+            // lblAssignedTo
+            // 
+            this.lblAssignedTo.AutoSize = true;
+            this.lblAssignedTo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssignedTo.Location = new System.Drawing.Point(79, 246);
+            this.lblAssignedTo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAssignedTo.Name = "lblAssignedTo";
+            this.lblAssignedTo.Size = new System.Drawing.Size(145, 38);
+            this.lblAssignedTo.TabIndex = 6;
+            this.lblAssignedTo.Text = "Assign to :";
+            // 
+            // cbAssignedTo
+            // 
+            this.cbAssignedTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAssignedTo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAssignedTo.FormattingEnabled = true;
+            this.cbAssignedTo.Items.AddRange(new object[] {
+            "Hot Drop",
+            "Embobinadora",
+            "Cortadoras"});
+            this.cbAssignedTo.Location = new System.Drawing.Point(239, 243);
+            this.cbAssignedTo.Margin = new System.Windows.Forms.Padding(4);
+            this.cbAssignedTo.Name = "cbAssignedTo";
+            this.cbAssignedTo.Size = new System.Drawing.Size(266, 45);
+            this.cbAssignedTo.TabIndex = 1;
+            // 
             // IssueForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblDetails);
+            this.Controls.Add(this.cbAssignedTo);
             this.Controls.Add(this.cbEquipment);
+            this.Controls.Add(this.lblAssignedTo);
             this.Controls.Add(this.cbLine);
             this.Controls.Add(this.lblEquipment);
             this.Controls.Add(this.txtDetails);
@@ -152,5 +182,7 @@
         private System.Windows.Forms.Label lblEquipment;
         private System.Windows.Forms.TextBox txtDetails;
         private System.Windows.Forms.Label lblLine;
+        private System.Windows.Forms.Label lblAssignedTo;
+        private System.Windows.Forms.ComboBox cbAssignedTo;
     }
 }
