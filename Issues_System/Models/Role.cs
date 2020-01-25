@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Issues_System.Models
 {
-    enum Role
+    public enum Role
     {
         user,
         admin

@@ -1,4 +1,5 @@
 ﻿using Issues_System.Controls;
+using Issues_System.Models;
 using Issues_System.Views;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Issues_System
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(User user)
         {
             InitializeComponent();
 

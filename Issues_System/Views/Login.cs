@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Issues_System.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -26,35 +27,11 @@ namespace Issues_System.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string connstring = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
+            UserDAL uDal = new UserDAL();
 
-            using (SqlConnection connection = new SqlConnection(connstring))
-            {
-                connection.Open();
-                using (SqlCommand cmd = new SqlCommand("splogin",connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-                    cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                    cmd.Parameters.Add("@result", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    var result = cmd.Parameters.Add("@result", SqlDbType.Int);
-                    result.Direction = ParameterDirection.ReturnValue;
-                    cmd.ExecuteNonQuery();
-
-                    int connected = Convert.ToInt32(result.Value);
-                    if (connected == 1)
-                    {
-                        MessageBox.Show("Login Succesfull", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        MainForm mainForm = new MainForm();
-                        mainForm.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Username or password inccorect!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
+            MainForm mainForm = new MainForm(uDal.Login(txtUsername.Text, txtPassword.Text));
+            mainForm.Show();
+            this.Hide();
         }
     }
 }
