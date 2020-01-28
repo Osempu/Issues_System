@@ -19,6 +19,8 @@ namespace Issues_System
         {
             InitializeComponent();
 
+            this.issueForm.lblDetails.Text = user.Name;
+
             btnSelector.Hide();
             HideViews();
         }

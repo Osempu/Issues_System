@@ -175,14 +175,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label lblDetails;
-        private System.Windows.Forms.ComboBox cbEquipment;
-        private System.Windows.Forms.ComboBox cbLine;
-        private System.Windows.Forms.Label lblEquipment;
-        private System.Windows.Forms.TextBox txtDetails;
-        private System.Windows.Forms.Label lblLine;
-        private System.Windows.Forms.Label lblAssignedTo;
-        private System.Windows.Forms.ComboBox cbAssignedTo;
+        public System.Windows.Forms.Button btnSubmit;
+        public System.Windows.Forms.Label lblDetails;
+        public System.Windows.Forms.ComboBox cbEquipment;
+        public System.Windows.Forms.ComboBox cbLine;
+        public System.Windows.Forms.Label lblEquipment;
+        public System.Windows.Forms.TextBox txtDetails;
+        public System.Windows.Forms.Label lblLine;
+        public System.Windows.Forms.Label lblAssignedTo;
+        public System.Windows.Forms.ComboBox cbAssignedTo;
     }
 }
