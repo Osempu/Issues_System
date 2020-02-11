@@ -202,6 +202,7 @@
             this.issueForm.Name = "issueForm";
             this.issueForm.Size = new System.Drawing.Size(912, 661);
             this.issueForm.TabIndex = 11;
+            this.issueForm.Load += new System.EventHandler(this.issueForm_Load);
             // 
             // issuesHistory
             // 

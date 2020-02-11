@@ -69,5 +69,10 @@ namespace Issues_System
         {
             this.Close();
         }
+
+        private void issueForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
