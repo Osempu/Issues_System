@@ -14,39 +14,52 @@ namespace Issues_System.Views
 {
     public partial class IssueForm : UserControl
     {
+        public User LogedUser { get; set; }
         public IssueForm()
         {
             InitializeComponent();
+
+            LoadUsersCb();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (cbLine.Text == "" || cbEquipment.Text == "" || txtDetails.Text == "")
+            if (cbLine.Text == "" || cbEquipment.Text == "" || txtDetails.Text == "" || cbAssignedTo.Text == "")
             {
                 MessageBox.Show("Please fill all the fields.", "Missing Fields",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                IssueDAL iDal = new IssueDAL();
-                //Filling issue with form data.
-                Issue issue = new Issue()
+                if (LogedUser.Role == Role.admin)
                 {
-                    Line = cbLine.Text,
-                    Equipment = cbEquipment.Text,
-                    Details = txtDetails.Text,
-                    OpenAt = DateTime.Now.TimeOfDay,
-                };
+                    IssueDAL iDal = new IssueDAL();
+                    //Filling issue with form data.
+                    Issue issue = new Issue()
+                    {
+                        OpenBy = $"{this.LogedUser.Name} {this.LogedUser.LastName}",
+                        AssignedTo = cbAssignedTo.Text,
+                        Line = cbLine.Text,
+                        Equipment = cbEquipment.Text,
+                        Details = txtDetails.Text,
+                        OpenAt = DateTime.Now.TimeOfDay,
+                    };
 
-                if (iDal.Insert(issue) > 0)
-                {
-                    ClearFields();
-                    MessageBox.Show("Issue Submited.", "Issue Submited", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (iDal.Insert(issue) > 0)
+                    {
+                        ClearFields();
+                        MessageBox.Show("Issue Submited.", "Issue Submited", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("The issue was not submited due to an error", "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("The issue was not submited due to an error", "Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Only admins can open issues", "Not authorized",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -56,6 +69,14 @@ namespace Issues_System.Views
             cbLine.SelectedIndex = -1;
             cbEquipment.SelectedIndex = -1;
             txtDetails.Text = "";
+            cbAssignedTo.SelectedIndex = -1;
+        }
+
+        private void LoadUsersCb()
+        {
+            UserDAL userDAL = new UserDAL();
+            cbAssignedTo.DataSource = userDAL.AllUsersNames();
+            cbAssignedTo.SelectedIndex = -1;
         }
     }
 }

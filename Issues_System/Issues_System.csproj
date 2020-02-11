@@ -70,6 +70,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TestDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Views\CloseIssueForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +160,17 @@
     </None>
     <None Include="TestDBDataSet.xss">
       <DependentUpon>TestDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TestDBDataSet1.xsc">
+      <DependentUpon>TestDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TestDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestDBDataSet1.xss">
+      <DependentUpon>TestDBDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

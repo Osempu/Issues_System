@@ -58,7 +58,7 @@
             // 
             this.lblDetails.AutoSize = true;
             this.lblDetails.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetails.Location = new System.Drawing.Point(66, 362);
+            this.lblDetails.Location = new System.Drawing.Point(39, 362);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDetails.Name = "lblDetails";
             this.lblDetails.Size = new System.Drawing.Size(185, 38);
@@ -99,7 +99,7 @@
             // 
             this.lblEquipment.AutoSize = true;
             this.lblEquipment.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipment.Location = new System.Drawing.Point(79, 152);
+            this.lblEquipment.Location = new System.Drawing.Point(60, 152);
             this.lblEquipment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEquipment.Name = "lblEquipment";
             this.lblEquipment.Size = new System.Drawing.Size(164, 38);
@@ -120,7 +120,7 @@
             // 
             this.lblLine.AutoSize = true;
             this.lblLine.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLine.Location = new System.Drawing.Point(140, 56);
+            this.lblLine.Location = new System.Drawing.Point(142, 56);
             this.lblLine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLine.Name = "lblLine";
             this.lblLine.Size = new System.Drawing.Size(82, 38);
@@ -183,6 +183,6 @@
         private System.Windows.Forms.TextBox txtDetails;
         private System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Label lblAssignedTo;
-        private System.Windows.Forms.ComboBox cbAssignedTo;
+        public System.Windows.Forms.ComboBox cbAssignedTo;
     }
 }

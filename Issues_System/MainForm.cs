@@ -21,6 +21,8 @@ namespace Issues_System
 
             btnSelector.Hide();
             HideViews();
+
+            this.issueForm.LogedUser = user;
         }
 
         IssueDAL iDal = new IssueDAL();

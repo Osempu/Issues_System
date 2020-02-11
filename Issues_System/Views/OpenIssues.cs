@@ -29,6 +29,9 @@ namespace Issues_System.Views
 
                 Issue issue = iDal.FIndById(id);
 
+                issue.TimeOpen = TimeSpan.Zero;
+                issue.ClosedAt = TimeSpan.Zero;
+
                 CloseIssueForm closeForm = new CloseIssueForm(issue);
                 closeForm.ShowDialog();
 

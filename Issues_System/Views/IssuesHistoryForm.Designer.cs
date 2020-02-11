@@ -37,10 +37,14 @@
             this.txtLine = new System.Windows.Forms.TextBox();
             this.lblLine = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtTime = new System.Windows.Forms.TextBox();
+            this.txtOpenAt = new System.Windows.Forms.TextBox();
             this.llbTime = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblIssueID = new System.Windows.Forms.Label();
+            this.txtClosedAt = new System.Windows.Forms.TextBox();
+            this.lblClosedAt = new System.Windows.Forms.Label();
+            this.txtTimeOpen = new System.Windows.Forms.TextBox();
+            this.lblTimeOpen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtSolution
@@ -131,19 +135,19 @@
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // txtTime
+            // txtOpenAt
             // 
-            this.txtTime.Location = new System.Drawing.Point(477, 19);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.ReadOnly = true;
-            this.txtTime.Size = new System.Drawing.Size(114, 34);
-            this.txtTime.TabIndex = 15;
-            this.txtTime.TabStop = false;
+            this.txtOpenAt.Location = new System.Drawing.Point(477, 19);
+            this.txtOpenAt.Name = "txtOpenAt";
+            this.txtOpenAt.ReadOnly = true;
+            this.txtOpenAt.Size = new System.Drawing.Size(114, 34);
+            this.txtOpenAt.TabIndex = 15;
+            this.txtOpenAt.TabStop = false;
             // 
             // llbTime
             // 
             this.llbTime.AutoSize = true;
-            this.llbTime.Location = new System.Drawing.Point(366, 22);
+            this.llbTime.Location = new System.Drawing.Point(352, 22);
             this.llbTime.Name = "llbTime";
             this.llbTime.Size = new System.Drawing.Size(91, 28);
             this.llbTime.TabIndex = 12;
@@ -167,11 +171,51 @@
             this.lblIssueID.TabIndex = 13;
             this.lblIssueID.Text = "Issue ID :";
             // 
+            // txtClosedAt
+            // 
+            this.txtClosedAt.Location = new System.Drawing.Point(477, 130);
+            this.txtClosedAt.Name = "txtClosedAt";
+            this.txtClosedAt.ReadOnly = true;
+            this.txtClosedAt.Size = new System.Drawing.Size(114, 34);
+            this.txtClosedAt.TabIndex = 25;
+            this.txtClosedAt.TabStop = false;
+            // 
+            // lblClosedAt
+            // 
+            this.lblClosedAt.AutoSize = true;
+            this.lblClosedAt.Location = new System.Drawing.Point(352, 133);
+            this.lblClosedAt.Name = "lblClosedAt";
+            this.lblClosedAt.Size = new System.Drawing.Size(105, 28);
+            this.lblClosedAt.TabIndex = 24;
+            this.lblClosedAt.Text = "Closed At :";
+            // 
+            // txtTimeOpen
+            // 
+            this.txtTimeOpen.Location = new System.Drawing.Point(476, 72);
+            this.txtTimeOpen.Name = "txtTimeOpen";
+            this.txtTimeOpen.ReadOnly = true;
+            this.txtTimeOpen.Size = new System.Drawing.Size(114, 34);
+            this.txtTimeOpen.TabIndex = 27;
+            this.txtTimeOpen.TabStop = false;
+            // 
+            // lblTimeOpen
+            // 
+            this.lblTimeOpen.AutoSize = true;
+            this.lblTimeOpen.Location = new System.Drawing.Point(351, 75);
+            this.lblTimeOpen.Name = "lblTimeOpen";
+            this.lblTimeOpen.Size = new System.Drawing.Size(116, 28);
+            this.lblTimeOpen.TabIndex = 26;
+            this.lblTimeOpen.Text = "Time Open :";
+            // 
             // IssuesHistoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(602, 531);
+            this.Controls.Add(this.txtTimeOpen);
+            this.Controls.Add(this.lblTimeOpen);
+            this.Controls.Add(this.txtClosedAt);
+            this.Controls.Add(this.lblClosedAt);
             this.Controls.Add(this.txtSolution);
             this.Controls.Add(this.lblSolution);
             this.Controls.Add(this.txtDetails);
@@ -181,7 +225,7 @@
             this.Controls.Add(this.txtLine);
             this.Controls.Add(this.lblLine);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.txtTime);
+            this.Controls.Add(this.txtOpenAt);
             this.Controls.Add(this.llbTime);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblIssueID);
@@ -205,9 +249,13 @@
         private System.Windows.Forms.TextBox txtLine;
         private System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.TextBox txtTime;
+        private System.Windows.Forms.TextBox txtOpenAt;
         private System.Windows.Forms.Label llbTime;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblIssueID;
+        private System.Windows.Forms.TextBox txtClosedAt;
+        private System.Windows.Forms.Label lblClosedAt;
+        private System.Windows.Forms.TextBox txtTimeOpen;
+        private System.Windows.Forms.Label lblTimeOpen;
     }
 }

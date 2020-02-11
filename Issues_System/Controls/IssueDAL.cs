@@ -69,10 +69,12 @@ namespace Issues_System.Controls
             using (SqlConnection conn = new SqlConnection(connstring))
             {
                 conn.Open();
-                string sqlCmd = "Insert into Issues(Line, Equipment, Details, OpenAt, IsClosed) values (@Line, @Equipment, @Details, @OpenAt, @IsClosed)";
+                string sqlCmd = "Insert into Issues(OpenBy, AssignedTo, Line, Equipment, Details, OpenAt, IsClosed) values (@OpenBy, @AssignedTo,@Line, @Equipment, @Details, @OpenAt, @IsClosed)";
 
                 using (SqlCommand cmd = new SqlCommand(sqlCmd, conn))
                 {
+                    cmd.Parameters.AddWithValue("@OpenBy", issue.OpenBy);
+                    cmd.Parameters.AddWithValue("@AssignedTo", issue.AssignedTo);
                     cmd.Parameters.AddWithValue("@Line", issue.Line);
                     cmd.Parameters.AddWithValue("@Equipment", issue.Equipment);
                     cmd.Parameters.AddWithValue("@Details", issue.Details);
@@ -108,6 +110,13 @@ namespace Issues_System.Controls
                             returnedIssue.Details = reader["Details"].ToString();
                             returnedIssue.Solution = reader["Solution"].ToString();
                             returnedIssue.OpenAt = TimeSpan.Parse(reader["OpenAt"].ToString());
+
+                            if (TimeSpan.TryParse(reader["TimeOpen"].ToString(), out TimeSpan TimeOpen) && 
+                                TimeSpan.TryParse(reader["ClosedAt"].ToString(), out TimeSpan ClosedAt))
+                            {
+                                returnedIssue.TimeOpen = TimeOpen;
+                                returnedIssue.ClosedAt = ClosedAt;
+                            }
                         }
                 }
                 conn.Close();

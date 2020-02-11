@@ -32,7 +32,9 @@ namespace Issues_System.Views
             txtEquipment.Text = issue.Equipment;
             txtDetails.Text = issue.Details;
             txtSolution.Text = issue.Solution;
-            txtTime.Text = issue.OpenAt.ToString(@"hh\:mm\:ss");
+            txtOpenAt.Text = issue.OpenAt.ToString(@"hh\:mm\:ss");
+            txtTimeOpen.Text = issue.TimeOpen.ToString(@"hh\:mm\:ss");
+            txtClosedAt.Text = issue.ClosedAt.ToString(@"hh\:mm\:ss");
         }
     }
 }
