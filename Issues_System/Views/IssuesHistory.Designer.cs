@@ -38,12 +38,12 @@
             this.testDBDataSet = new Issues_System.TestDBDataSet();
             this.issuesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.issuesTableAdapter = new Issues_System.TestDBDataSetTableAdapters.IssuesTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.closedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeOpenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignedToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIssuesHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issuesBindingSource)).BeginInit();
@@ -76,6 +76,8 @@
             // 
             // dgvIssuesHistory
             // 
+            this.dgvIssuesHistory.AllowUserToAddRows = false;
+            this.dgvIssuesHistory.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvIssuesHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvIssuesHistory.AutoGenerateColumns = false;
@@ -92,14 +94,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIssuesHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvIssuesHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIssuesHistory.ColumnHeadersHeight = 34;
             this.dgvIssuesHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
+            this.openByDataGridViewTextBoxColumn,
+            this.assignedToDataGridViewTextBoxColumn,
             this.lineDataGridViewTextBoxColumn,
             this.equipmentDataGridViewTextBoxColumn,
-            this.openAtDataGridViewTextBoxColumn,
-            this.closedAtDataGridViewTextBoxColumn,
-            this.timeOpenDataGridViewTextBoxColumn});
+            this.openAtDataGridViewTextBoxColumn});
             this.dgvIssuesHistory.DataSource = this.issuesBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -114,6 +116,7 @@
             this.dgvIssuesHistory.Location = new System.Drawing.Point(14, 70);
             this.dgvIssuesHistory.MultiSelect = false;
             this.dgvIssuesHistory.Name = "dgvIssuesHistory";
+            this.dgvIssuesHistory.ReadOnly = true;
             this.dgvIssuesHistory.RowHeadersVisible = false;
             this.dgvIssuesHistory.RowHeadersWidth = 51;
             this.dgvIssuesHistory.RowTemplate.Height = 24;
@@ -132,9 +135,9 @@
             this.dgvIssuesHistory.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvIssuesHistory.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvIssuesHistory.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvIssuesHistory.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIssuesHistory.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvIssuesHistory.ThemeStyle.HeaderStyle.Height = 34;
-            this.dgvIssuesHistory.ThemeStyle.ReadOnly = false;
+            this.dgvIssuesHistory.ThemeStyle.ReadOnly = true;
             this.dgvIssuesHistory.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvIssuesHistory.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvIssuesHistory.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,48 +160,59 @@
             // 
             this.issuesTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // openAtDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lineDataGridViewTextBoxColumn
-            // 
-            this.lineDataGridViewTextBoxColumn.DataPropertyName = "Line";
-            this.lineDataGridViewTextBoxColumn.HeaderText = "Line";
-            this.lineDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lineDataGridViewTextBoxColumn.Name = "lineDataGridViewTextBoxColumn";
+            this.openAtDataGridViewTextBoxColumn.DataPropertyName = "openAt";
+            this.openAtDataGridViewTextBoxColumn.FillWeight = 100.7487F;
+            this.openAtDataGridViewTextBoxColumn.HeaderText = "openAt";
+            this.openAtDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.openAtDataGridViewTextBoxColumn.Name = "openAtDataGridViewTextBoxColumn";
+            this.openAtDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // equipmentDataGridViewTextBoxColumn
             // 
             this.equipmentDataGridViewTextBoxColumn.DataPropertyName = "Equipment";
+            this.equipmentDataGridViewTextBoxColumn.FillWeight = 100.7487F;
             this.equipmentDataGridViewTextBoxColumn.HeaderText = "Equipment";
             this.equipmentDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.equipmentDataGridViewTextBoxColumn.Name = "equipmentDataGridViewTextBoxColumn";
+            this.equipmentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // openAtDataGridViewTextBoxColumn
+            // lineDataGridViewTextBoxColumn
             // 
-            this.openAtDataGridViewTextBoxColumn.DataPropertyName = "OpenAt";
-            this.openAtDataGridViewTextBoxColumn.HeaderText = "OpenAt";
-            this.openAtDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.openAtDataGridViewTextBoxColumn.Name = "openAtDataGridViewTextBoxColumn";
+            this.lineDataGridViewTextBoxColumn.DataPropertyName = "Line";
+            this.lineDataGridViewTextBoxColumn.FillWeight = 100.7487F;
+            this.lineDataGridViewTextBoxColumn.HeaderText = "Line";
+            this.lineDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lineDataGridViewTextBoxColumn.Name = "lineDataGridViewTextBoxColumn";
+            this.lineDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // closedAtDataGridViewTextBoxColumn
+            // assignedToDataGridViewTextBoxColumn
             // 
-            this.closedAtDataGridViewTextBoxColumn.DataPropertyName = "ClosedAt";
-            this.closedAtDataGridViewTextBoxColumn.HeaderText = "ClosedAt";
-            this.closedAtDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.closedAtDataGridViewTextBoxColumn.Name = "closedAtDataGridViewTextBoxColumn";
+            this.assignedToDataGridViewTextBoxColumn.DataPropertyName = "AssignedTo";
+            this.assignedToDataGridViewTextBoxColumn.FillWeight = 100.7487F;
+            this.assignedToDataGridViewTextBoxColumn.HeaderText = "AssignedTo";
+            this.assignedToDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.assignedToDataGridViewTextBoxColumn.Name = "assignedToDataGridViewTextBoxColumn";
+            this.assignedToDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // timeOpenDataGridViewTextBoxColumn
+            // openByDataGridViewTextBoxColumn
             // 
-            this.timeOpenDataGridViewTextBoxColumn.DataPropertyName = "TimeOpen";
-            this.timeOpenDataGridViewTextBoxColumn.HeaderText = "TimeOpen";
-            this.timeOpenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.timeOpenDataGridViewTextBoxColumn.Name = "timeOpenDataGridViewTextBoxColumn";
+            this.openByDataGridViewTextBoxColumn.DataPropertyName = "OpenBy";
+            this.openByDataGridViewTextBoxColumn.FillWeight = 100.7487F;
+            this.openByDataGridViewTextBoxColumn.HeaderText = "OpenBy";
+            this.openByDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.openByDataGridViewTextBoxColumn.Name = "openByDataGridViewTextBoxColumn";
+            this.openByDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 30F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // IssuesHistory
             // 
@@ -227,10 +241,10 @@
         private TestDBDataSet testDBDataSet;
         private TestDBDataSetTableAdapters.IssuesTableAdapter issuesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn openByDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assignedToDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lineDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipmentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn openAtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn closedAtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeOpenDataGridViewTextBoxColumn;
     }
 }

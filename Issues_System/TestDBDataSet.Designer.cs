@@ -281,15 +281,15 @@ namespace Issues_System {
             
             private global::System.Data.DataColumn columnId;
             
+            private global::System.Data.DataColumn columnOpenBy;
+            
+            private global::System.Data.DataColumn columnAssignedTo;
+            
             private global::System.Data.DataColumn columnLine;
             
             private global::System.Data.DataColumn columnEquipment;
             
-            private global::System.Data.DataColumn columnOpenAt;
-            
-            private global::System.Data.DataColumn columnTimeOpen;
-            
-            private global::System.Data.DataColumn columnClosedAt;
+            private global::System.Data.DataColumn columnopenAt;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -334,6 +334,22 @@ namespace Issues_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenByColumn {
+                get {
+                    return this.columnOpenBy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AssignedToColumn {
+                get {
+                    return this.columnAssignedTo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn LineColumn {
                 get {
                     return this.columnLine;
@@ -350,25 +366,9 @@ namespace Issues_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn OpenAtColumn {
+            public global::System.Data.DataColumn openAtColumn {
                 get {
-                    return this.columnOpenAt;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TimeOpenColumn {
-                get {
-                    return this.columnTimeOpen;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ClosedAtColumn {
-                get {
-                    return this.columnClosedAt;
+                    return this.columnopenAt;
                 }
             }
             
@@ -409,15 +409,15 @@ namespace Issues_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public IssuesRow AddIssuesRow(string Line, string Equipment, System.TimeSpan OpenAt, System.TimeSpan TimeOpen, System.TimeSpan ClosedAt) {
+            public IssuesRow AddIssuesRow(int OpenBy, int AssignedTo, string Line, string Equipment, System.TimeSpan openAt) {
                 IssuesRow rowIssuesRow = ((IssuesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        OpenBy,
+                        AssignedTo,
                         Line,
                         Equipment,
-                        OpenAt,
-                        TimeOpen,
-                        ClosedAt};
+                        openAt};
                 rowIssuesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIssuesRow);
                 return rowIssuesRow;
@@ -448,11 +448,11 @@ namespace Issues_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
+                this.columnOpenBy = base.Columns["OpenBy"];
+                this.columnAssignedTo = base.Columns["AssignedTo"];
                 this.columnLine = base.Columns["Line"];
                 this.columnEquipment = base.Columns["Equipment"];
-                this.columnOpenAt = base.Columns["OpenAt"];
-                this.columnTimeOpen = base.Columns["TimeOpen"];
-                this.columnClosedAt = base.Columns["ClosedAt"];
+                this.columnopenAt = base.Columns["openAt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -460,16 +460,16 @@ namespace Issues_System {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
+                this.columnOpenBy = new global::System.Data.DataColumn("OpenBy", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenBy);
+                this.columnAssignedTo = new global::System.Data.DataColumn("AssignedTo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAssignedTo);
                 this.columnLine = new global::System.Data.DataColumn("Line", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLine);
                 this.columnEquipment = new global::System.Data.DataColumn("Equipment", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEquipment);
-                this.columnOpenAt = new global::System.Data.DataColumn("OpenAt", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOpenAt);
-                this.columnTimeOpen = new global::System.Data.DataColumn("TimeOpen", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTimeOpen);
-                this.columnClosedAt = new global::System.Data.DataColumn("ClosedAt", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClosedAt);
+                this.columnopenAt = new global::System.Data.DataColumn("openAt", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnopenAt);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -633,6 +633,38 @@ namespace Issues_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OpenBy {
+                get {
+                    try {
+                        return ((int)(this[this.tableIssues.OpenByColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenBy\' in table \'Issues\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIssues.OpenByColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int AssignedTo {
+                get {
+                    try {
+                        return ((int)(this[this.tableIssues.AssignedToColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AssignedTo\' in table \'Issues\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIssues.AssignedToColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Line {
                 get {
                     try {
@@ -665,50 +697,42 @@ namespace Issues_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.TimeSpan OpenAt {
+            public System.TimeSpan openAt {
                 get {
                     try {
-                        return ((global::System.TimeSpan)(this[this.tableIssues.OpenAtColumn]));
+                        return ((global::System.TimeSpan)(this[this.tableIssues.openAtColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OpenAt\' in table \'Issues\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'openAt\' in table \'Issues\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableIssues.OpenAtColumn] = value;
+                    this[this.tableIssues.openAtColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.TimeSpan TimeOpen {
-                get {
-                    try {
-                        return ((global::System.TimeSpan)(this[this.tableIssues.TimeOpenColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TimeOpen\' in table \'Issues\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableIssues.TimeOpenColumn] = value;
-                }
+            public bool IsOpenByNull() {
+                return this.IsNull(this.tableIssues.OpenByColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.TimeSpan ClosedAt {
-                get {
-                    try {
-                        return ((global::System.TimeSpan)(this[this.tableIssues.ClosedAtColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedAt\' in table \'Issues\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableIssues.ClosedAtColumn] = value;
-                }
+            public void SetOpenByNull() {
+                this[this.tableIssues.OpenByColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAssignedToNull() {
+                return this.IsNull(this.tableIssues.AssignedToColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAssignedToNull() {
+                this[this.tableIssues.AssignedToColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,38 +761,14 @@ namespace Issues_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsOpenAtNull() {
-                return this.IsNull(this.tableIssues.OpenAtColumn);
+            public bool IsopenAtNull() {
+                return this.IsNull(this.tableIssues.openAtColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetOpenAtNull() {
-                this[this.tableIssues.OpenAtColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTimeOpenNull() {
-                return this.IsNull(this.tableIssues.TimeOpenColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTimeOpenNull() {
-                this[this.tableIssues.TimeOpenColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsClosedAtNull() {
-                return this.IsNull(this.tableIssues.ClosedAtColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetClosedAtNull() {
-                this[this.tableIssues.ClosedAtColumn] = global::System.Convert.DBNull;
+            public void SetopenAtNull() {
+                this[this.tableIssues.openAtColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -932,59 +932,59 @@ namespace Issues_System.TestDBDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Issues";
             tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("OpenBy", "OpenBy");
+            tableMapping.ColumnMappings.Add("AssignedTo", "AssignedTo");
             tableMapping.ColumnMappings.Add("Line", "Line");
             tableMapping.ColumnMappings.Add("Equipment", "Equipment");
-            tableMapping.ColumnMappings.Add("OpenAt", "OpenAt");
-            tableMapping.ColumnMappings.Add("TimeOpen", "TimeOpen");
-            tableMapping.ColumnMappings.Add("ClosedAt", "ClosedAt");
+            tableMapping.ColumnMappings.Add("openAt", "openAt");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Issues] WHERE (([Id] = @Original_Id) AND ((@IsNull_Line = 1 AND [Line] IS NULL) OR ([Line] = @Original_Line)) AND ((@IsNull_Equipment = 1 AND [Equipment] IS NULL) OR ([Equipment] = @Original_Equipment)) AND ((@IsNull_OpenAt = 1 AND [OpenAt] IS NULL) OR ([OpenAt] = @Original_OpenAt)) AND ((@IsNull_TimeOpen = 1 AND [TimeOpen] IS NULL) OR ([TimeOpen] = @Original_TimeOpen)) AND ((@IsNull_ClosedAt = 1 AND [ClosedAt] IS NULL) OR ([ClosedAt] = @Original_ClosedAt)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Issues] WHERE (([Id] = @Original_Id) AND ((@IsNull_OpenBy = 1 AND [OpenBy] IS NULL) OR ([OpenBy] = @Original_OpenBy)) AND ((@IsNull_AssignedTo = 1 AND [AssignedTo] IS NULL) OR ([AssignedTo] = @Original_AssignedTo)) AND ((@IsNull_Line = 1 AND [Line] IS NULL) OR ([Line] = @Original_Line)) AND ((@IsNull_Equipment = 1 AND [Equipment] IS NULL) OR ([Equipment] = @Original_Equipment)) AND ((@IsNull_openAt = 1 AND [openAt] IS NULL) OR ([openAt] = @Original_openAt)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OpenBy", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenBy", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpenBy", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenBy", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AssignedTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignedTo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssignedTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignedTo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Line", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Line", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Line", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Line", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Equipment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Equipment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Equipment", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Equipment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OpenAt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenAt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpenAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenAt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TimeOpen", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TimeOpen", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TimeOpen", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TimeOpen", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClosedAt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClosedAt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClosedAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClosedAt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_openAt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "openAt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_openAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "openAt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Issues] ([Line], [Equipment], [OpenAt], [TimeOpen], [ClosedAt]" +
-                ") VALUES (@Line, @Equipment, @OpenAt, @TimeOpen, @ClosedAt);\r\nSELECT Id, Line, E" +
-                "quipment, OpenAt, TimeOpen, ClosedAt FROM Issues WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Issues] ([OpenBy], [AssignedTo], [Line], [Equipment], [openAt]" +
+                ") VALUES (@OpenBy, @AssignedTo, @Line, @Equipment, @openAt);\r\nSELECT Id, OpenBy," +
+                " AssignedTo, Line, Equipment, openAt FROM Issues WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpenBy", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignedTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignedTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Line", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Line", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Equipment", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Equipment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpenAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenAt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TimeOpen", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TimeOpen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClosedAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClosedAt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@openAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "openAt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Issues] SET [Line] = @Line, [Equipment] = @Equipment, [OpenAt] = @OpenAt, [TimeOpen] = @TimeOpen, [ClosedAt] = @ClosedAt WHERE (([Id] = @Original_Id) AND ((@IsNull_Line = 1 AND [Line] IS NULL) OR ([Line] = @Original_Line)) AND ((@IsNull_Equipment = 1 AND [Equipment] IS NULL) OR ([Equipment] = @Original_Equipment)) AND ((@IsNull_OpenAt = 1 AND [OpenAt] IS NULL) OR ([OpenAt] = @Original_OpenAt)) AND ((@IsNull_TimeOpen = 1 AND [TimeOpen] IS NULL) OR ([TimeOpen] = @Original_TimeOpen)) AND ((@IsNull_ClosedAt = 1 AND [ClosedAt] IS NULL) OR ([ClosedAt] = @Original_ClosedAt)));
-SELECT Id, Line, Equipment, OpenAt, TimeOpen, ClosedAt FROM Issues WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Issues] SET [OpenBy] = @OpenBy, [AssignedTo] = @AssignedTo, [Line] = @Line, [Equipment] = @Equipment, [openAt] = @openAt WHERE (([Id] = @Original_Id) AND ((@IsNull_OpenBy = 1 AND [OpenBy] IS NULL) OR ([OpenBy] = @Original_OpenBy)) AND ((@IsNull_AssignedTo = 1 AND [AssignedTo] IS NULL) OR ([AssignedTo] = @Original_AssignedTo)) AND ((@IsNull_Line = 1 AND [Line] IS NULL) OR ([Line] = @Original_Line)) AND ((@IsNull_Equipment = 1 AND [Equipment] IS NULL) OR ([Equipment] = @Original_Equipment)) AND ((@IsNull_openAt = 1 AND [openAt] IS NULL) OR ([openAt] = @Original_openAt)));
+SELECT Id, OpenBy, AssignedTo, Line, Equipment, openAt FROM Issues WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpenBy", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignedTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignedTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Line", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Line", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Equipment", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Equipment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OpenAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenAt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TimeOpen", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TimeOpen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClosedAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClosedAt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@openAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "openAt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OpenBy", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenBy", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpenBy", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenBy", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AssignedTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignedTo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AssignedTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AssignedTo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Line", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Line", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Line", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Line", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Equipment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Equipment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Equipment", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Equipment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OpenAt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenAt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OpenAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OpenAt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TimeOpen", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TimeOpen", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TimeOpen", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TimeOpen", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClosedAt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClosedAt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClosedAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClosedAt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_openAt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "openAt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_openAt", global::System.Data.SqlDbType.Time, 0, global::System.Data.ParameterDirection.Input, 0, 0, "openAt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -992,7 +992,7 @@ SELECT Id, Line, Equipment, OpenAt, TimeOpen, ClosedAt FROM Issues WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Issues_System.Properties.Settings.Default.TestDBConnectionString;
+            this._connection.ConnectionString = global::Issues_System.Properties.Settings.Default.IssuesHistory;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1001,7 +1001,7 @@ SELECT Id, Line, Equipment, OpenAt, TimeOpen, ClosedAt FROM Issues WHERE (Id = @
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Line, Equipment, OpenAt, TimeOpen, ClosedAt FROM dbo.Issues";
+            this._commandCollection[0].CommandText = "SELECT Id, OpenBy, AssignedTo, Line, Equipment, openAt FROM dbo.Issues";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1062,43 +1062,43 @@ SELECT Id, Line, Equipment, OpenAt, TimeOpen, ClosedAt FROM Issues WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Line, string Original_Equipment, global::System.Nullable<global::System.TimeSpan> Original_OpenAt, global::System.Nullable<global::System.TimeSpan> Original_TimeOpen, global::System.Nullable<global::System.TimeSpan> Original_ClosedAt) {
+        public virtual int Delete(int Original_Id, global::System.Nullable<int> Original_OpenBy, global::System.Nullable<int> Original_AssignedTo, string Original_Line, string Original_Equipment, global::System.Nullable<global::System.TimeSpan> Original_openAt) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_Line == null)) {
+            if ((Original_OpenBy.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_OpenBy.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Line));
+            if ((Original_AssignedTo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_AssignedTo.Value));
             }
-            if ((Original_Equipment == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Equipment));
-            }
-            if ((Original_OpenAt.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.TimeSpan)(Original_OpenAt.Value));
-            }
-            else {
+            if ((Original_Line == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_TimeOpen.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.TimeSpan)(Original_TimeOpen.Value));
-            }
             else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Line));
+            }
+            if ((Original_Equipment == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_ClosedAt.HasValue == true)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Equipment));
+            }
+            if ((Original_openAt.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.TimeSpan)(Original_ClosedAt.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.TimeSpan)(Original_openAt.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
@@ -1124,33 +1124,33 @@ SELECT Id, Line, Equipment, OpenAt, TimeOpen, ClosedAt FROM Issues WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Line, string Equipment, global::System.Nullable<global::System.TimeSpan> OpenAt, global::System.Nullable<global::System.TimeSpan> TimeOpen, global::System.Nullable<global::System.TimeSpan> ClosedAt) {
-            if ((Line == null)) {
+        public virtual int Insert(global::System.Nullable<int> OpenBy, global::System.Nullable<int> AssignedTo, string Line, string Equipment, global::System.Nullable<global::System.TimeSpan> openAt) {
+            if ((OpenBy.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(OpenBy.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Line));
+            if ((AssignedTo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AssignedTo.Value));
             }
-            if ((Equipment == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Equipment));
-            }
-            if ((OpenAt.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.TimeSpan)(OpenAt.Value));
-            }
-            else {
+            if ((Line == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((TimeOpen.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.TimeSpan)(TimeOpen.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Line));
+            }
+            if ((Equipment == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((ClosedAt.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.TimeSpan)(ClosedAt.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Equipment));
+            }
+            if ((openAt.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.TimeSpan)(openAt.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -1175,73 +1175,73 @@ SELECT Id, Line, Equipment, OpenAt, TimeOpen, ClosedAt FROM Issues WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Line, string Equipment, global::System.Nullable<global::System.TimeSpan> OpenAt, global::System.Nullable<global::System.TimeSpan> TimeOpen, global::System.Nullable<global::System.TimeSpan> ClosedAt, int Original_Id, string Original_Line, string Original_Equipment, global::System.Nullable<global::System.TimeSpan> Original_OpenAt, global::System.Nullable<global::System.TimeSpan> Original_TimeOpen, global::System.Nullable<global::System.TimeSpan> Original_ClosedAt, int Id) {
-            if ((Line == null)) {
+        public virtual int Update(global::System.Nullable<int> OpenBy, global::System.Nullable<int> AssignedTo, string Line, string Equipment, global::System.Nullable<global::System.TimeSpan> openAt, int Original_Id, global::System.Nullable<int> Original_OpenBy, global::System.Nullable<int> Original_AssignedTo, string Original_Line, string Original_Equipment, global::System.Nullable<global::System.TimeSpan> Original_openAt, int Id) {
+            if ((OpenBy.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(OpenBy.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Line));
+            if ((AssignedTo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AssignedTo.Value));
             }
-            if ((Equipment == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Equipment));
-            }
-            if ((OpenAt.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.TimeSpan)(OpenAt.Value));
-            }
-            else {
+            if ((Line == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((TimeOpen.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.TimeSpan)(TimeOpen.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Line));
+            }
+            if ((Equipment == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((ClosedAt.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.TimeSpan)(ClosedAt.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Equipment));
+            }
+            if ((openAt.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.TimeSpan)(openAt.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
-            if ((Original_Line == null)) {
+            if ((Original_OpenBy.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_OpenBy.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Line));
+            if ((Original_AssignedTo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_AssignedTo.Value));
             }
-            if ((Original_Equipment == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Equipment));
-            }
-            if ((Original_OpenAt.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.TimeSpan)(Original_OpenAt.Value));
-            }
-            else {
+            if ((Original_Line == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_TimeOpen.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.TimeSpan)(Original_TimeOpen.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Line));
+            }
+            if ((Original_Equipment == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Original_ClosedAt.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Equipment));
+            }
+            if ((Original_openAt.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.TimeSpan)(Original_ClosedAt.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.TimeSpan)(Original_openAt.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
@@ -1268,8 +1268,8 @@ SELECT Id, Line, Equipment, OpenAt, TimeOpen, ClosedAt FROM Issues WHERE (Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Line, string Equipment, global::System.Nullable<global::System.TimeSpan> OpenAt, global::System.Nullable<global::System.TimeSpan> TimeOpen, global::System.Nullable<global::System.TimeSpan> ClosedAt, int Original_Id, string Original_Line, string Original_Equipment, global::System.Nullable<global::System.TimeSpan> Original_OpenAt, global::System.Nullable<global::System.TimeSpan> Original_TimeOpen, global::System.Nullable<global::System.TimeSpan> Original_ClosedAt) {
-            return this.Update(Line, Equipment, OpenAt, TimeOpen, ClosedAt, Original_Id, Original_Line, Original_Equipment, Original_OpenAt, Original_TimeOpen, Original_ClosedAt, Original_Id);
+        public virtual int Update(global::System.Nullable<int> OpenBy, global::System.Nullable<int> AssignedTo, string Line, string Equipment, global::System.Nullable<global::System.TimeSpan> openAt, int Original_Id, global::System.Nullable<int> Original_OpenBy, global::System.Nullable<int> Original_AssignedTo, string Original_Line, string Original_Equipment, global::System.Nullable<global::System.TimeSpan> Original_openAt) {
+            return this.Update(OpenBy, AssignedTo, Line, Equipment, openAt, Original_Id, Original_OpenBy, Original_AssignedTo, Original_Line, Original_Equipment, Original_openAt, Original_Id);
         }
     }
     

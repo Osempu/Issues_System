@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Guna.UI">
-      <HintPath>..\..\..\x86\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -69,11 +69,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TestDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TestDBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Views\CloseIssueForm.cs">
       <SubType>Form</SubType>
@@ -160,17 +155,6 @@
     </None>
     <None Include="TestDBDataSet.xss">
       <DependentUpon>TestDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TestDBDataSet1.xsc">
-      <DependentUpon>TestDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="TestDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TestDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TestDBDataSet1.xss">
-      <DependentUpon>TestDBDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
