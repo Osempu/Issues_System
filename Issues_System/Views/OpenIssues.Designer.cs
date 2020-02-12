@@ -120,7 +120,7 @@
             this.dgvOpenIssues.RowHeadersVisible = false;
             this.dgvOpenIssues.RowHeadersWidth = 51;
             this.dgvOpenIssues.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvOpenIssues.RowTemplate.Height = 24;
+            this.dgvOpenIssues.RowTemplate.Height = 30;
             this.dgvOpenIssues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOpenIssues.Size = new System.Drawing.Size(884, 501);
             this.dgvOpenIssues.TabIndex = 15;
@@ -143,7 +143,7 @@
             this.dgvOpenIssues.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvOpenIssues.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvOpenIssues.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvOpenIssues.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvOpenIssues.ThemeStyle.RowsStyle.Height = 30;
             this.dgvOpenIssues.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOpenIssues.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
@@ -174,7 +174,7 @@
             // 
             this.openByDataGridViewTextBoxColumn.DataPropertyName = "OpenBy";
             this.openByDataGridViewTextBoxColumn.FillWeight = 127.5047F;
-            this.openByDataGridViewTextBoxColumn.HeaderText = "OpenBy";
+            this.openByDataGridViewTextBoxColumn.HeaderText = "Open By";
             this.openByDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.openByDataGridViewTextBoxColumn.Name = "openByDataGridViewTextBoxColumn";
             this.openByDataGridViewTextBoxColumn.ReadOnly = true;
@@ -210,7 +210,7 @@
             // 
             this.openAtDataGridViewTextBoxColumn.DataPropertyName = "OpenAt";
             this.openAtDataGridViewTextBoxColumn.FillWeight = 70.50127F;
-            this.openAtDataGridViewTextBoxColumn.HeaderText = "OpenAt";
+            this.openAtDataGridViewTextBoxColumn.HeaderText = "Open At";
             this.openAtDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.openAtDataGridViewTextBoxColumn.Name = "openAtDataGridViewTextBoxColumn";
             this.openAtDataGridViewTextBoxColumn.ReadOnly = true;

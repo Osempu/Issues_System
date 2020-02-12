@@ -69,7 +69,7 @@ namespace Issues_System.Controls
             using (SqlConnection conn = new SqlConnection(connstring))
             {
                 conn.Open();
-                string sqlCmd = "Insert into Issues(OpenBy, AssignedTo, Line, Equipment, Details, OpenAt, IsClosed) values (@OpenBy, @AssignedTo,@Line, @Equipment, @Details, @OpenAt, @IsClosed)";
+                string sqlCmd = "Insert into Issues(OpenBy, AssignedTo, Line, Equipment, Details, OpenAt, Date, IsClosed) values (@OpenBy, @AssignedTo,@Line, @Equipment, @Details, @OpenAt, @Date, @IsClosed)";
 
                 using (SqlCommand cmd = new SqlCommand(sqlCmd, conn))
                 {
@@ -79,6 +79,7 @@ namespace Issues_System.Controls
                     cmd.Parameters.AddWithValue("@Equipment", issue.Equipment);
                     cmd.Parameters.AddWithValue("@Details", issue.Details);
                     cmd.Parameters.AddWithValue("@OpenAt", issue.OpenAt);
+                    cmd.Parameters.AddWithValue("@Date", issue.Date);
                     cmd.Parameters.AddWithValue("@IsClosed", false);
 
                     succes = cmd.ExecuteNonQuery();
@@ -112,10 +113,12 @@ namespace Issues_System.Controls
                             returnedIssue.OpenAt = TimeSpan.Parse(reader["OpenAt"].ToString());
 
                             if (TimeSpan.TryParse(reader["TimeOpen"].ToString(), out TimeSpan TimeOpen) && 
-                                TimeSpan.TryParse(reader["ClosedAt"].ToString(), out TimeSpan ClosedAt))
+                                TimeSpan.TryParse(reader["ClosedAt"].ToString(), out TimeSpan ClosedAt) &&
+                                DateTime.TryParse(reader["Date"].ToString(), out DateTime Date))
                             {
                                 returnedIssue.TimeOpen = TimeOpen;
                                 returnedIssue.ClosedAt = ClosedAt;
+                                returnedIssue.Date = Date;
                             }
                         }
                 }

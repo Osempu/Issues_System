@@ -35,6 +35,7 @@ namespace Issues_System.Views
             txtOpenAt.Text = issue.OpenAt.ToString(@"hh\:mm\:ss");
             txtTimeOpen.Text = issue.TimeOpen.ToString(@"hh\:mm\:ss");
             txtClosedAt.Text = issue.ClosedAt.ToString(@"hh\:mm\:ss");
+            txtDate.Text = issue.Date.ToShortDateString();
         }
     }
 }

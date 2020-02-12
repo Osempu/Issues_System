@@ -18,6 +18,7 @@ namespace Issues_System.Models
         public TimeSpan OpenAt { get; set; }
         public TimeSpan TimeOpen { get; set; }
         public TimeSpan ClosedAt { get; set; }
+        public DateTime Date { get; set; }
         public bool IsClosed { get; set; }
     }
 }

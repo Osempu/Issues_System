@@ -43,6 +43,7 @@ namespace Issues_System.Views
                         Equipment = cbEquipment.Text,
                         Details = txtDetails.Text,
                         OpenAt = DateTime.Now.TimeOfDay,
+                        Date = DateTime.Today
                     };
 
                     if (iDal.Insert(issue) > 0)

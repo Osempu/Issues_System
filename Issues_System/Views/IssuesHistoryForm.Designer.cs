@@ -45,6 +45,8 @@
             this.lblClosedAt = new System.Windows.Forms.Label();
             this.txtTimeOpen = new System.Windows.Forms.TextBox();
             this.lblTimeOpen = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtSolution
@@ -53,7 +55,7 @@
             this.txtSolution.Multiline = true;
             this.txtSolution.Name = "txtSolution";
             this.txtSolution.ReadOnly = true;
-            this.txtSolution.Size = new System.Drawing.Size(460, 114);
+            this.txtSolution.Size = new System.Drawing.Size(719, 114);
             this.txtSolution.TabIndex = 11;
             // 
             // lblSolution
@@ -71,7 +73,7 @@
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.ReadOnly = true;
-            this.txtDetails.Size = new System.Drawing.Size(460, 112);
+            this.txtDetails.Size = new System.Drawing.Size(719, 112);
             this.txtDetails.TabIndex = 21;
             this.txtDetails.TabStop = false;
             // 
@@ -127,7 +129,7 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(423, 464);
+            this.btnSubmit.Location = new System.Drawing.Point(682, 461);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(168, 58);
             this.btnSubmit.TabIndex = 14;
@@ -137,7 +139,7 @@
             // 
             // txtOpenAt
             // 
-            this.txtOpenAt.Location = new System.Drawing.Point(477, 19);
+            this.txtOpenAt.Location = new System.Drawing.Point(723, 19);
             this.txtOpenAt.Name = "txtOpenAt";
             this.txtOpenAt.ReadOnly = true;
             this.txtOpenAt.Size = new System.Drawing.Size(114, 34);
@@ -147,7 +149,7 @@
             // llbTime
             // 
             this.llbTime.AutoSize = true;
-            this.llbTime.Location = new System.Drawing.Point(352, 22);
+            this.llbTime.Location = new System.Drawing.Point(598, 22);
             this.llbTime.Name = "llbTime";
             this.llbTime.Size = new System.Drawing.Size(91, 28);
             this.llbTime.TabIndex = 12;
@@ -173,7 +175,7 @@
             // 
             // txtClosedAt
             // 
-            this.txtClosedAt.Location = new System.Drawing.Point(477, 130);
+            this.txtClosedAt.Location = new System.Drawing.Point(723, 130);
             this.txtClosedAt.Name = "txtClosedAt";
             this.txtClosedAt.ReadOnly = true;
             this.txtClosedAt.Size = new System.Drawing.Size(114, 34);
@@ -183,7 +185,7 @@
             // lblClosedAt
             // 
             this.lblClosedAt.AutoSize = true;
-            this.lblClosedAt.Location = new System.Drawing.Point(352, 133);
+            this.lblClosedAt.Location = new System.Drawing.Point(598, 133);
             this.lblClosedAt.Name = "lblClosedAt";
             this.lblClosedAt.Size = new System.Drawing.Size(105, 28);
             this.lblClosedAt.TabIndex = 24;
@@ -191,7 +193,7 @@
             // 
             // txtTimeOpen
             // 
-            this.txtTimeOpen.Location = new System.Drawing.Point(476, 72);
+            this.txtTimeOpen.Location = new System.Drawing.Point(722, 72);
             this.txtTimeOpen.Name = "txtTimeOpen";
             this.txtTimeOpen.ReadOnly = true;
             this.txtTimeOpen.Size = new System.Drawing.Size(114, 34);
@@ -201,17 +203,35 @@
             // lblTimeOpen
             // 
             this.lblTimeOpen.AutoSize = true;
-            this.lblTimeOpen.Location = new System.Drawing.Point(351, 75);
+            this.lblTimeOpen.Location = new System.Drawing.Point(597, 75);
             this.lblTimeOpen.Name = "lblTimeOpen";
             this.lblTimeOpen.Size = new System.Drawing.Size(116, 28);
             this.lblTimeOpen.TabIndex = 26;
             this.lblTimeOpen.Text = "Time Open :";
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(355, 25);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(62, 28);
+            this.lblDate.TabIndex = 12;
+            this.lblDate.Text = "Date :";
+            // 
+            // txtDate
+            // 
+            this.txtDate.Location = new System.Drawing.Point(440, 22);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.ReadOnly = true;
+            this.txtDate.Size = new System.Drawing.Size(114, 34);
+            this.txtDate.TabIndex = 15;
+            this.txtDate.TabStop = false;
+            // 
             // IssuesHistoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(602, 531);
+            this.ClientSize = new System.Drawing.Size(862, 531);
             this.Controls.Add(this.txtTimeOpen);
             this.Controls.Add(this.lblTimeOpen);
             this.Controls.Add(this.txtClosedAt);
@@ -225,6 +245,8 @@
             this.Controls.Add(this.txtLine);
             this.Controls.Add(this.lblLine);
             this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.txtDate);
+            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.txtOpenAt);
             this.Controls.Add(this.llbTime);
             this.Controls.Add(this.txtId);
@@ -257,5 +279,7 @@
         private System.Windows.Forms.Label lblClosedAt;
         private System.Windows.Forms.TextBox txtTimeOpen;
         private System.Windows.Forms.Label lblTimeOpen;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.TextBox txtDate;
     }
 }
