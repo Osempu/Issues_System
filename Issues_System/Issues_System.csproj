@@ -176,6 +176,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="img\issue_history_view.jpg" />
+    <Content Include="img\issue_system_img.jpg" />
+    <Content Include="img\main_view.jpg" />
+    <Content Include="img\open_issues_view.jpg" />
+    <Content Include="img\open_issue_view.jpg" />
+    <Content Include="img\solution_view.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
